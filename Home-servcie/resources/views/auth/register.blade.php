@@ -15,3 +15,9 @@
         </div>
     </div>
 </header>
+ <!-- Banner -->
+ <div class="bg-[#f1f2f2] py-4">
+    <div class="container mx-auto text-center">
+        <h1 class="text-xl font-medium">Register For Join With Us</h1>
+    </div>
+</div>
