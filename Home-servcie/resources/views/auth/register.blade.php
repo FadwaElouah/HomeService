@@ -97,3 +97,14 @@
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
+
+                 <!-- Password -->
+                 <div>
+                    <label class="block mb-2">
+                        Password <span class="text-red-500">*</span>
+                    </label>
+                    <input type="password" name="password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded @error('password') border-red-500 @enderror" required>
+                    @error('password')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
