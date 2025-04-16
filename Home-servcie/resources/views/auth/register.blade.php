@@ -44,3 +44,7 @@
         </div>
     </div>
 
+        <!-- Registration Form -->
+        <form action="{{ route('register') }}" method="POST" class="max-w-4xl mx-auto">
+            @csrf
+            <div class="grid md:grid-cols-2 gap-6">
