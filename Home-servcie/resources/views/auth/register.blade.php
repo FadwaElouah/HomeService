@@ -48,3 +48,14 @@
         <form action="{{ route('register') }}" method="POST" class="max-w-4xl mx-auto">
             @csrf
             <div class="grid md:grid-cols-2 gap-6">
+                   <!-- Nom -->
+                   <div>
+                    <label class="block mb-2">
+                        Nom <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" name="nom" placeholder="Nom" class="w-full p-3 border border-gray-300 rounded @error('nom') border-red-500 @enderror" required>
+                    @error('nom')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
+
