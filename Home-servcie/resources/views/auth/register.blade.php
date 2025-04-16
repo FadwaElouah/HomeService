@@ -69,3 +69,14 @@
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
+
+                 <!-- Email Address -->
+                 <div>
+                    <label class="block mb-2">
+                        Email Address <span class="text-red-500">*</span>
+                    </label>
+                    <input type="email" name="email" placeholder="Email Address" class="w-full p-3 border border-gray-300 rounded @error('email') border-red-500 @enderror" required>
+                    @error('email')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
