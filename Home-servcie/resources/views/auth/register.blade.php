@@ -108,3 +108,12 @@
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
+
+                 <!-- Confirm Password -->
+                 <div>
+                    <label class="block mb-2">
+                        Confirm Password <span class="text-red-500">*</span>
+                    </label>
+                    <input type="password" name="password_confirmation" placeholder="Confirm Password" class="w-full p-3 border border-gray-300 rounded" required>
+                </div>
+            </div>
