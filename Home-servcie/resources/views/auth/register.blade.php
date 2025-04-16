@@ -80,3 +80,20 @@
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                     @enderror
                 </div>
+
+                  <!-- Phone Number -->
+                  <div>
+                    <label class="block mb-2">
+                        Phone Number <span class="text-red-500">*</span>
+                    </label>
+                    <div class="flex">
+                        <select name="country_code" class="bg-[#d9d9d9] p-3 border border-gray-300 rounded-l w-24">
+                            <option value="880">880</option>
+                            <!-- Add more country codes as needed -->
+                        </select>
+                        <input type="tel" name="phone" placeholder="1821-251726" class="w-full p-3 border border-gray-300 rounded-r @error('phone') border-red-500 @enderror" required>
+                    </div>
+                    @error('phone')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
