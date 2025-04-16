@@ -117,3 +117,12 @@
                     <input type="password" name="password_confirmation" placeholder="Confirm Password" class="w-full p-3 border border-gray-300 rounded" required>
                 </div>
             </div>
+
+              <!-- Next Button -->
+              <div class="flex justify-end mt-8">
+                <button type="submit" class="bg-[#fd7600] text-white py-2 px-8 rounded">
+                    Next
+                </button>
+            </div>
+        </form>
+    </main>
