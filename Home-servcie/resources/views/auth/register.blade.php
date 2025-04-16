@@ -59,3 +59,13 @@
                     @enderror
                 </div>
 
+                <!-- Prenom -->
+                <div>
+                    <label class="block mb-2">
+                        Prenom <span class="text-red-500">*</span>
+                    </label>
+                    <input type="text" name="prenom" placeholder="Prenom" class="w-full p-3 border border-gray-300 rounded @error('prenom') border-red-500 @enderror" required>
+                    @error('prenom')
+                        <span class="text-red-500 text-sm">{{ $message }}</span>
+                    @enderror
+                </div>
