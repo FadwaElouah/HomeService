@@ -1,235 +1,335 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="flex flex-col min-h-screen">
-    <!-- Header -->
-    <header class="p-4">
-        <div class="container mx-auto">
-            <div class="flex items-center">
-                <div class="flex items-center">
-                    <img src="{{ asset('images/home-icon.svg') }}" alt="HomeService" class="w-6 h-6 mr-1">
-                    <span class="font-bold">
-                        <span class="text-[#fd7600]">Home</span>
-                        <span>Service</span>
-                    </span>
-                </div>
-            </div>
+{{-- resources/views/auth/register.blade.php --}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeService - Inscription</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            orange: '#FD7600',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="flex flex-col min-h-screen">
+  <!-- Header -->
+  <header class="py-4 px-6 md:px-10 border-b">
+    <div class="max-w-7xl mx-auto">
+      <a href="/" class="flex items-center">
+        <div class="relative h-8 w-8 mr-2">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8">
+            <path
+              d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"
+              fill="#FD7600"
+              stroke="#FD7600"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
         </div>
-    </header>
+        <span class="font-bold text-xl">
+          <span class="text-[#FD7600]">Home</span>Service
+        </span>
+      </a>
+    </div>
+  </header>
 
-    <!-- Banner -->
-    <div class="bg-[#f1f2f2] py-4">
-        <div class="container mx-auto text-center">
-            <h1 class="text-xl font-medium">Register For Join With Us</h1>
+  <!-- Banner -->
+  <div class="bg-[#f1f2f2] py-4 text-center">
+    <h1 class="text-xl font-medium">Register For Join With Us</h1>
+  </div>
+
+  <!-- Main Content -->
+  <main class="flex-grow py-10 px-4">
+    <div class="max-w-4xl mx-auto">
+      @if ($errors->any())
+        <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+          <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
         </div>
+      @endif
+
+      <!-- User Type Selection -->
+      <div class="flex justify-center gap-4 mb-16">
+        <button
+          type="button"
+          id="provider-btn"
+          class="w-40 border border-[#FD7600] text-[#FD7600] hover:bg-[#FD7600] hover:text-white py-2 px-4 rounded flex items-center justify-center role-btn"
+          data-role="provider"
+        >
+          <i class="fas fa-briefcase mr-2"></i>
+          Seller
+        </button>
+        <button
+          type="button"
+          id="client-btn"
+          class="w-40 bg-[#FD7600] hover:bg-[#e66a00] text-white py-2 px-4 rounded flex items-center justify-center role-btn active"
+          data-role="client"
+        >
+          <i class="fas fa-user mr-2"></i>
+          Buyer
+        </button>
+      </div>
+
+      <!-- Registration Form -->
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6" method="POST" action="{{ route('register') }}">
+        @csrf
+        <input type="hidden" name="role" id="role-input" value="client">
+
+        <div>
+          <label for="name" class="block mb-2 font-medium">
+            Nom <span class="text-red-500">*</span>
+          </label>
+          <input
+            id="name"
+            name="name"
+            placeholder="Nom complet"
+            value="{{ old('name') }}"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FD7600] focus:border-transparent @error('name') border-red-500 @enderror"
+          />
+          @error('name')
+            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+          @enderror
+        </div>
+
+        <div>
+          <label for="email" class="block mb-2 font-medium">
+            Email Address <span class="text-red-500">*</span>
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Email Address"
+            value="{{ old('email') }}"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FD7600] focus:border-transparent @error('email') border-red-500 @enderror"
+          />
+          @error('email')
+            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+          @enderror
+        </div>
+
+        <div>
+          <label for="phone" class="block mb-2 font-medium">
+            Phone Number <span class="text-red-500">*</span>
+          </label>
+          <div class="flex">
+            <select
+              name="phone_code"
+              class="w-24 px-3 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#FD7600] focus:border-transparent bg-[#f1f2f2]"
+            >
+              <option value="880">+880</option>
+              <option value="1">+1</option>
+              <option value="44">+44</option>
+              <option value="91">+91</option>
+            </select>
+            <input
+              id="phone"
+              name="phone"
+              placeholder="1821-251726"
+              value="{{ old('phone') }}"
+              class="flex-1 px-3 py-2 border border-gray-300 rounded-r-md focus:outline-none focus:ring-2 focus:ring-[#FD7600] focus:border-transparent border-l-0 @error('phone') border-red-500 @enderror"
+            />
+          </div>
+          @error('phone')
+            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+          @enderror
+        </div>
+
+        <div>
+          <label for="address" class="block mb-2 font-medium">
+            Address
+          </label>
+          <input
+            id="address"
+            name="address"
+            placeholder="Your address"
+            value="{{ old('address') }}"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FD7600] focus:border-transparent @error('address') border-red-500 @enderror"
+          />
+          @error('address')
+            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+          @enderror
+        </div>
+
+        <div>
+          <label for="password" class="block mb-2 font-medium">
+            Password <span class="text-red-500">*</span>
+          </label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Password"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FD7600] focus:border-transparent @error('password') border-red-500 @enderror"
+          />
+          @error('password')
+            <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+          @enderror
+        </div>
+
+        <div>
+          <label for="password_confirmation" class="block mb-2 font-medium">
+            Confirm Password <span class="text-red-500">*</span>
+          </label>
+          <input
+            id="password_confirmation"
+            name="password_confirmation"
+            type="password"
+            placeholder="Confirm Password"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FD7600] focus:border-transparent"
+          />
+        </div>
+
+        <div class="md:col-span-2 flex justify-end mt-4">
+          <button
+            type="submit"
+            class="bg-[#FD7600] hover:bg-[#e66a00] text-white px-8 py-2 rounded"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#d9d9d9] py-10 px-4">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Logo and Description -->
+      <div>
+        <a href="/" class="flex items-center mb-4">
+          <div class="relative h-8 w-8 mr-2">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8">
+              <path
+                d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"
+                fill="#FD7600"
+                stroke="#FD7600"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <span class="font-bold text-xl">
+            <span class="text-[#FD7600]">Home</span>Service
+          </span>
+        </a>
+        <p class="text-sm text-gray-600">
+          It is a long established fact that a reader will be distracted by the readable content of a page when
+          looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less.
+        </p>
+      </div>
+
+      <!-- Community -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Community</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+              • Become A Seller
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+              • Become A Buyer
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Category -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Category</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+              • Electronics
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+              • Cleaning
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+              • Home Move
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+              • Salon & Spa
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+              • Digital Marketing
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Contact Info</h3>
+        <ul class="space-y-2">
+          <li class="text-gray-600">• 41/1 Hilton Mall, NY City</li>
+          <li class="text-gray-600">• +012-78901234</li>
+          <li class="text-gray-600">• example@mail.com</li>
+        </ul>
+        <div class="flex space-x-4 mt-4">
+          <a href="#" class="text-[#3b5998] hover:text-[#FD7600]">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="text-[#55acee] hover:text-[#FD7600]">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="text-[#007ab9] hover:text-[#FD7600]">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto py-12 px-4">
-        <!-- User Type Selection -->
-        <div class="flex justify-center mb-16">
-            <div class="grid grid-cols-2 gap-4 w-full max-w-md">
-                <button class="flex items-center justify-center gap-2 py-3 px-6 border border-[#fd7600] text-[#fd7600] rounded">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-                        <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
-                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                    </svg>
-                    <span class="font-medium">Seller</span>
-                </button>
-                <button class="flex items-center justify-center gap-2 py-3 px-6 bg-[#fd7600] text-white rounded">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                    <span class="font-medium">Buyer</span>
-                </button>
-            </div>
-        </div>
+    <!-- Copyright -->
+    <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-gray-300 text-center text-gray-600">
+      All copyright © 2025 Reserved
+    </div>
+  </footer>
 
-        <!-- Registration Form -->
-        <form action="{{ route('register') }}" method="POST" class="max-w-4xl mx-auto">
-            @csrf
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Nom -->
-                <div>
-                    <label class="block mb-2">
-                        Nom <span class="text-red-500">*</span>
-                    </label>
-                    <input type="text" name="nom" placeholder="Nom" class="w-full p-3 border border-gray-300 rounded @error('nom') border-red-500 @enderror" required>
-                    @error('nom')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
+  <script>
+    // Role selection handling
+    document.querySelectorAll('.role-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        document.querySelectorAll('.role-btn').forEach(btn => {
+          btn.classList.remove('active', 'bg-[#FD7600]', 'text-white');
+          btn.classList.add('border', 'border-[#FD7600]', 'text-[#FD7600]');
+        });
 
-                <!-- Prenom -->
-                <div>
-                    <label class="block mb-2">
-                        Prenom <span class="text-red-500">*</span>
-                    </label>
-                    <input type="text" name="prenom" placeholder="Prenom" class="w-full p-3 border border-gray-300 rounded @error('prenom') border-red-500 @enderror" required>
-                    @error('prenom')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
+        // Add active class to clicked button
+        this.classList.remove('border', 'border-[#FD7600]', 'text-[#FD7600]');
+        this.classList.add('active', 'bg-[#FD7600]', 'text-white');
 
-                <!-- Email Address -->
-                <div>
-                    <label class="block mb-2">
-                        Email Address <span class="text-red-500">*</span>
-                    </label>
-                    <input type="email" name="email" placeholder="Email Address" class="w-full p-3 border border-gray-300 rounded @error('email') border-red-500 @enderror" required>
-                    @error('email')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <!-- Phone Number -->
-                <div>
-                    <label class="block mb-2">
-                        Phone Number <span class="text-red-500">*</span>
-                    </label>
-                    <div class="flex">
-                        <select name="country_code" class="bg-[#d9d9d9] p-3 border border-gray-300 rounded-l w-24">
-                            <option value="880">880</option>
-                            <!-- Add more country codes as needed -->
-                        </select>
-                        <input type="tel" name="phone" placeholder="1821-251726" class="w-full p-3 border border-gray-300 rounded-r @error('phone') border-red-500 @enderror" required>
-                    </div>
-                    @error('phone')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <!-- Password -->
-                <div>
-                    <label class="block mb-2">
-                        Password <span class="text-red-500">*</span>
-                    </label>
-                    <input type="password" name="password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded @error('password') border-red-500 @enderror" required>
-                    @error('password')
-                        <span class="text-red-500 text-sm">{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <!-- Confirm Password -->
-                <div>
-                    <label class="block mb-2">
-                        Confirm Password <span class="text-red-500">*</span>
-                    </label>
-                    <input type="password" name="password_confirmation" placeholder="Confirm Password" class="w-full p-3 border border-gray-300 rounded" required>
-                </div>
-            </div>
-
-            <!-- Next Button -->
-            <div class="flex justify-end mt-8">
-                <button type="submit" class="bg-[#fd7600] text-white py-2 px-8 rounded">
-                    Next
-                </button>
-            </div>
-        </form>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-[#f1f2f2] py-8">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <!-- Logo and Description -->
-                <div>
-                    <div class="flex items-center mb-4">
-                        <img src="{{ asset('images/home-icon.svg') }}" alt="HomeService" class="w-6 h-6 mr-1">
-                        <span class="font-bold">
-                            <span class="text-[#fd7600]">Home</span>
-                            <span>Service</span>
-                        </span>
-                    </div>
-                    <p class="text-sm text-gray-600">
-                        It is a long established fact that a reader will be distracted by the readable content of a page when
-                        looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less.
-                    </p>
-                </div>
-
-                <!-- Community -->
-                <div>
-                    <h3 class="font-bold mb-4">Community</h3>
-                    <ul class="space-y-2">
-                        <li>
-                            <a href="{{ route('become.seller') }}" class="text-sm hover:text-[#fd7600]">
-                                • Become A Seller
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('become.buyer') }}" class="text-sm hover:text-[#fd7600]">
-                                • Become A Buyer
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Category -->
-                <div>
-                    <h3 class="font-bold mb-4">Category</h3>
-                    <ul class="space-y-2">
-                        <li>
-                            <a href="{{ route('category', 'electronics') }}" class="text-sm hover:text-[#fd7600]">
-                                • Electronics
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('category', 'cleaning') }}" class="text-sm hover:text-[#fd7600]">
-                                • Cleaning
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('category', 'home-move') }}" class="text-sm hover:text-[#fd7600]">
-                                • Home Move
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('category', 'salon-spa') }}" class="text-sm hover:text-[#fd7600]">
-                                • Salon & Spa
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('category', 'digital-marketing') }}" class="text-sm hover:text-[#fd7600]">
-                                • Digital Marketing
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div>
-                    <h3 class="font-bold mb-4">Contact Info</h3>
-                    <ul class="space-y-2">
-                        <li class="text-sm">• 41/1 Hilton Mall, NY City</li>
-                        <li class="text-sm">• +012-78901234</li>
-                        <li class="text-sm">• example@mail.com</li>
-                    </ul>
-                    <div class="flex gap-4 mt-4">
-                        <a href="#" class="text-[#3b5998]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-[#55acee]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                            </svg>
-                        </a>
-                        <a href="#" class="text-[#007ab9]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect width="4" height="12" x="2" y="9"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Copyright -->
-            <div class="border-t border-gray-300 mt-8 pt-4 text-center text-sm">All copyright © 2023 Reserved</div>
-        </div>
-    </footer>
-</div>
-@endsection
+        // Set the hidden input value
+        document.getElementById('role-input').value = this.dataset.role;
+      });
+    });
+  </script>
+</body>
+</html>
