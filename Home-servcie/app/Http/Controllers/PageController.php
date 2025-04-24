@@ -14,7 +14,7 @@ class PageController extends Controller
      */
     public function home()
     {
-        return view('pages.home', [
+        return view('home', [
             'title' => 'Home',
             'appName' => 'Laravel App',
             'companyName' => 'Your Company'
@@ -28,7 +28,7 @@ class PageController extends Controller
      */
     public function features()
     {
-        return view('pages.features', [
+        return view('features', [
             'title' => 'Features',
             'appName' => 'Laravel App',
             'companyName' => 'Your Company'

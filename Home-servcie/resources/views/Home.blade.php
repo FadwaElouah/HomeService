@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeService - Get any tasks done by professionals</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF6B00',
+                        'primary-light': '#FFF8F3',
+                        'secondary': '#4318FF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header/Navigation -->
+    <header class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center">
+            <a href="#" class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                </svg>
+                <span class="ml-2 text-xl font-bold">Home<span class="text-primary">Service</span></span>
+            </a>
+        </div>
+
+        <nav class="hidden md:flex items-center space-x-6">
+            <a href="#" class="text-sm font-medium">Home</a>
+            <a href="#" class="text-sm font-medium">About</a>
+            <div class="relative group">
+                <button class="flex items-center text-sm font-medium">
+                    Service List
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-10 hidden group-hover:block">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cleaning Service</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Home Repair</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Electronics</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Plumbing</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Salon & Spa</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Hairstyling</a>
+                </div>
+            </div>
+            <div class="relative group">
+                <button class="flex items-center text-sm font-medium">
+                    Authentication
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-10 hidden group-hover:block">
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Login</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Register</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Privacy Policy</a>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Terms and Conditions</a>
+                </div>
+            </div>
+            <div class="relative group">
+                <button class="flex items-center text-sm font-medium">
+                    Pages
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+            </div>
+            <a href="#" class="text-sm font-medium">Contact</a>
+        </nav>
+
+        <div class="flex items-center">
+            <a href="#" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium">Login</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-12 md:py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Get any tasks done by professionals</h1>
+                <p class="text-gray-600 mb-8">Choose services you need, find best professionals ready to help.</p>
+
+                <div class="relative mb-6">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <input type="text" class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm" placeholder="What service do you need?">
+                </div>
+
+                <button class="bg-primary text-white px-6 py-2 rounded-md font-medium">Search</button>
+
+                <div class="flex space-x-4 mt-8">
+                    <a href="#" class="border border-secondary text-secondary px-6 py-2 rounded-md font-medium">Post Job</a>
+                    <a href="#" class="bg-secondary text-white px-6 py-2 rounded-md font-medium">Find Service</a>
+                </div>
+            </div>
+
+            <div class="flex justify-center space-x-4">
+                <div class="bg-blue-500 rounded-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Cleaning professional" class="w-full h-64 object-cover">
+                </div>
+                <div class="bg-primary rounded-2xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Construction professional" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="bg-primary-light py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-8">Categories</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Electronics -->
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <div class="flex justify-center mb-4">
+                        <img src="https://via.placeholder.com/80" alt="Electronics" class="rounded-lg">
+                    </div>
+                    <h3 class="text-center font-medium">Electronics</h3>
+                    <p class="text-center text-sm text-gray-500">21+ Service</p>
+                </div>
+
+                <!-- Cleaning -->
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <div class="flex justify-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Cleaning" class="rounded-lg h-20 w-20 object-cover">
+                    </div>
+                    <h3 class="text-center font-medium">Cleaning</h3>
+                    <p class="text-center text-sm text-gray-500">15+ Service</p>
+                </div>
+
+                <!-- Home Repair -->
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <div class="flex justify-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Home Repair" class="rounded-lg h-20 w-20 object-cover">
+                    </div>
+                    <h3 class="text-center font-medium">Home Repair</h3>
+                    <p class="text-center text-sm text-gray-500">13+ Service</p>
+                </div>
+
+                <!-- Hairstyling -->
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <div class="flex justify-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Hairstyling" class="rounded-lg h-20 w-20 object-cover">
+                    </div>
+                    <h3 class="text-center font-medium">Hairstyling</h3>
+                    <p class="text-center text-sm text-gray-500">10+ Service</p>
+                </div>
+
+                <!-- Plumbing -->
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <div class="flex justify-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Plumbing" class="rounded-lg h-20 w-20 object-cover">
+                    </div>
+                    <h3 class="text-center font-medium">Plumbing</h3>
+                    <p class="text-center text-sm text-gray-500">24+ Service</p>
+                </div>
+
+                <!-- Salon & Spa -->
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <div class="flex justify-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Salon & Spa" class="rounded-lg h-20 w-20 object-cover">
+                    </div>
+                    <h3 class="text-center font-medium">Salon & Spa</h3>
+                    <p class="text-center text-sm text-gray-500">17+ Service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" id="mobile-menu-overlay">
+        <div class="bg-white h-full w-64 p-4">
+            <div class="flex justify-between items-center mb-6">
+                <a href="#" class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                    </svg>
+                    <span class="ml-2 text-lg font-bold">Home<span class="text-primary">Service</span></span>
+                </a>
+                <button id="close-mobile-menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="space-y-4">
+                <a href="#" class="block text-sm font-medium">Home</a>
+                <a href="#" class="block text-sm font-medium">About</a>
+                <div>
+                    <button class="flex items-center text-sm font-medium w-full justify-between">
+                        Service List
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+                <div>
+                    <button class="flex items-center text-sm font-medium w-full justify-between">
+                        Authentication
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+                <div>
+                    <button class="flex items-center text-sm font-medium w-full justify-between">
+                        Pages
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+                <a href="#" class="block text-sm font-medium">Contact</a>
+            </nav>
+
+            <div class="mt-6">
+                <a href="#" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium block text-center">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.createElement('button');
+            mobileMenuButton.classList.add('md:hidden', 'p-2');
+            mobileMenuButton.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            `;
+
+            const header = document.querySelector('header');
+            const navContainer = header.querySelector('nav').parentElement;
+            navContainer.parentNode.insertBefore(mobileMenuButton, navContainer);
+
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenuOverlay.classList.remove('hidden');
+            });
+
+            closeMobileMenuButton.addEventListener('click', function() {
+                mobileMenuOverlay.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
