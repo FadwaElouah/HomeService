@@ -102,6 +102,11 @@ export default function Home() {
         <div className="w-full max-w-md px-4">
           <h1 className="text-4xl font-bold text-center mb-10">Sign In</h1>
 
+          <p className="text-center text-sm text-gray-500 mb-6">
+            Welcome back! Please enter your credentials to continue.
+          </p>
+
+
           <form>
             <div className="space-y-6">
               <div className="space-y-2">
@@ -110,8 +115,10 @@ export default function Home() {
                 </label>
                 <input
                   id="username"
+                  type="email"
                   placeholder="Username Or Email"
                   className="w-full border border-gray-300 rounded p-3 h-auto"
+                  required
                 />
               </div>
 
@@ -124,6 +131,7 @@ export default function Home() {
                   type="password"
                   placeholder="Password"
                   className="w-full border border-gray-300 rounded p-3 h-auto"
+                  required
                 />
               </div>
 
@@ -131,7 +139,7 @@ export default function Home() {
                 <div className="flex items-center space-x-2">
                   <input type="checkbox" id="remember" className="rounded border-gray-300" />
                   <label htmlFor="remember" className="text-sm text-gray-600">
-                    Remembre me
+                    Remember me
                   </label>
                 </div>
                 <Link href="/forgot-password" className="text-sm text-gray-600">
@@ -140,7 +148,7 @@ export default function Home() {
               </div>
 
               <button type="submit" className="w-full bg-[#fd7600] text-white py-3 rounded text-lg font-medium">
-                login Now
+                Login Now
               </button>
             </div>
           </form>
@@ -287,7 +295,7 @@ export default function Home() {
 
           {/* Copyright */}
           <div className="border-t border-gray-300 pt-4 text-center">
-            <p className="text-sm text-gray-600">All copyright © 2023 Reserved</p>
+            <p className="text-sm text-gray-600">All copyright © 2025 Reserved</p>
           </div>
         </div>
       </footer>
