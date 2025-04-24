@@ -36,3 +36,15 @@ Route::get('/features', [PageController::class, 'features'])->name('features');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [PageController::class, 'submitContact'])->name('contact.submit');
+
+// Authentication routes (Laravel's built-in auth routes)
+Route::middleware(['auth'])->group(function () {
+    // Protected routes go here
+    Route::get('/dashboard', function () {
+        return view('dashboard', [
+            'title' => 'Dashboard',
+            'appName' => 'Laravel App',
+            'companyName' => 'Your Company'
+        ]);
+    })->name('dashboard');
+});
