@@ -312,7 +312,7 @@
         </div>
       </div>
       <div class="border-t border-gray-300 mt-8 pt-8 text-center text-sm text-gray-600">
-        All copyright © 2023 Reserved
+        All copyright © 2025 Reserved
       </div>
     </div>
   </footer>

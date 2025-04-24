@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\PageController;
 
 
 /*
@@ -27,3 +28,11 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register')
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 
 Route::post('/login', [LoginController::class, 'login']);
+
+
+// Public routes
+Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/features', [PageController::class, 'features'])->name('features');
+Route::get('/about', [PageController::class, 'about'])->name('about');
+Route::get('/contact', [PageController::class, 'contact'])->name('contact');
+Route::post('/contact', [PageController::class, 'submitContact'])->name('contact.submit');
