@@ -9,6 +9,8 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\ReviewController;
 
+use App\Http\Controllers\Auth\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +52,8 @@ Route::middleware('auth:api')->group(function () {
         Route::patch('users/{user}/status', [AdminController::class, 'toggleUserStatus']);
     });
 });
+
+
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth:api');
+

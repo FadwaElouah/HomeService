@@ -47,4 +47,10 @@ class LoginController extends Controller
             'message' => 'Successfully logged out',
         ]);
     }
+
+    public function showLoginForm()
+{
+    return view('auth.login'); 
+}
+
 }
