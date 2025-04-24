@@ -238,6 +238,205 @@
         </div>
     </div>
 
+    <div class="container mx-auto px-4 max-w-6xl">
+        <h1 class="text-2xl font-bold text-center mb-4">Why Choose HomeServer?</h1>
+        <p class="text-center max-w-2xl mx-auto text-sm mb-6">
+            HomeServer is a fast service-based marketplace out there to help you get any task done conveniently. Ready to use and easy-to-use app can make your life easier by finding a great performer for the tasks.
+        </p>
+        <div class="flex justify-center">
+            <button class="bg-primary hover:bg-orange-600 text-white font-medium py-2 px-6 rounded-full">
+                Talk to a Customer
+            </button>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="py-8">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Feature 1 -->
+                <div class="border border-gray-200 rounded-lg p-4 flex items-center">
+                    <div class="bg-orange-100 p-2 rounded-full mr-3">
+                        <i class="fas fa-star text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold">4.5/5</h3>
+                        <p class="text-sm text-gray-600">Trusted service provider with many clients</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="border border-gray-200 rounded-lg p-4 flex items-center">
+                    <div class="bg-orange-100 p-2 rounded-full mr-3">
+                        <i class="fas fa-headset text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold">Support</h3>
+                        <p class="text-sm text-gray-600">24-hour dedicated support whenever you need</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="border border-gray-200 rounded-lg p-4 flex items-center">
+                    <div class="bg-orange-100 p-2 rounded-full mr-3">
+                        <i class="fas fa-shield-alt text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold">Secure</h3>
+                        <p class="text-sm text-gray-600">Highly dedicated support team to help you</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Services Section -->
+    <section class="py-8">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-2xl font-bold mb-8">Popular Services</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service Card 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Hair Styling" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-white rounded-full p-1">
+                            <div class="bg-primary rounded-full w-8 h-8 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-16 bg-white rounded-lg py-1 px-2">
+                            <p class="text-xs">Paris Luxury Lifestyle</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Do Stylish Hair Style From Our Experts</h3>
+                        <p class="text-xs text-gray-500 mb-1">Starting at</p>
+                        <p class="text-primary font-bold mb-3">$15.00</p>
+                        <button class="w-full border border-gray-300 rounded py-2 text-sm hover:bg-gray-50">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Hair Styling" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-white rounded-full p-1">
+                            <div class="bg-primary rounded-full w-8 h-8 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-16 bg-white rounded-lg py-1 px-2">
+                            <p class="text-xs">New York Lifestyle</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Do Stylish Hair Style From Our Experts</h3>
+                        <p class="text-xs text-gray-500 mb-1">Starting at</p>
+                        <p class="text-primary font-bold mb-3">$15.00</p>
+                        <button class="w-full border border-gray-300 rounded py-2 text-sm hover:bg-gray-50">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Hair Styling" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-white rounded-full p-1">
+                            <div class="bg-primary rounded-full w-8 h-8 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-16 bg-white rounded-lg py-1 px-2">
+                            <p class="text-xs">LA Style Hotspot</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Do Stylish Hair Style From Our Experts</h3>
+                        <p class="text-xs text-gray-500 mb-1">Starting at</p>
+                        <p class="text-primary font-bold mb-3">$15.00</p>
+                        <button class="w-full border border-gray-300 rounded py-2 text-sm hover:bg-gray-50">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Hair Styling" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-white rounded-full p-1">
+                            <div class="bg-primary rounded-full w-8 h-8 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-16 bg-white rounded-lg py-1 px-2">
+                            <p class="text-xs">Milan Fashion Week</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Do Stylish Hair Style From Our Experts</h3>
+                        <p class="text-xs text-gray-500 mb-1">Starting at</p>
+                        <p class="text-primary font-bold mb-3">$15.00</p>
+                        <button class="w-full border border-gray-300 rounded py-2 text-sm hover:bg-gray-50">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Hair Styling" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-white rounded-full p-1">
+                            <div class="bg-primary rounded-full w-8 h-8 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-16 bg-white rounded-lg py-1 px-2">
+                            <p class="text-xs">Paris Luxury Lifestyle</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Do Stylish Hair Style From Our Experts</h3>
+                        <p class="text-xs text-gray-500 mb-1">Starting at</p>
+                        <p class="text-primary font-bold mb-3">$15.00</p>
+                        <button class="w-full border border-gray-300 rounded py-2 text-sm hover:bg-gray-50">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Hair Styling" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 left-4 bg-white rounded-full p-1">
+                            <div class="bg-primary rounded-full w-8 h-8 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-16 bg-white rounded-lg py-1 px-2">
+                            <p class="text-xs">London Luxury Lifestyle</p>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold mb-2">Do Stylish Hair Style From Our Experts</h3>
+                        <p class="text-xs text-gray-500 mb-1">Starting at</p>
+                        <p class="text-primary font-bold mb-3">$15.00</p>
+                        <button class="w-full border border-gray-300 rounded py-2 text-sm hover:bg-gray-50">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
         // Mobile menu functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -265,5 +464,10 @@
             });
         });
     </script>
+
+
 </body>
 </html>
+
+
+
