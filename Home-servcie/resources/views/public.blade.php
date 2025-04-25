@@ -166,21 +166,113 @@
             </div>
         </div>
 
+        /html>
         <!-- Footer -->
-        <footer class="bg-gray-800 text-white py-6">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="mb-4 md:mb-0">
-                        <p>&copy; 2023 HomeService. All rights reserved.</p>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="#" class="hover:text-gray-300">Terms</a>
-                        <a href="#" class="hover:text-gray-300">Privacy</a>
-                        <a href="#" class="hover:text-gray-300">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+     <footer class="bg-[#d9d9d9] py-10 px-4">
+       <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+         <!-- Logo and Description -->
+         <div>
+           <a href="/" class="flex items-center mb-4">
+             <div class="relative h-8 w-8 mr-2">
+               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8">
+                 <path
+                   d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z"
+                   fill="#FD7600"
+                   stroke="#FD7600"
+                   stroke-width="2"
+                   stroke-linecap="round"
+                   stroke-linejoin="round"
+                 />
+               </svg>
+             </div>
+             <span class="font-bold text-xl">
+               <span class="text-[#FD7600]">Home</span>Service
+             </span>
+           </a>
+           <p class="text-sm text-gray-600">
+             It is a long established fact that a reader will be distracted by the readable content of a page when
+             looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less.
+           </p>
+         </div>
+
+         <!-- Community -->
+         <div>
+           <h3 class="font-bold text-lg mb-4">Community</h3>
+           <ul class="space-y-2">
+             <li>
+               <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+                 • Become A Seller
+               </a>
+             </li>
+             <li>
+               <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+                 • Become A Buyer
+               </a>
+             </li>
+           </ul>
+         </div>
+
+         <!-- Category -->
+         <div>
+           <h3 class="font-bold text-lg mb-4">Category</h3>
+           <ul class="space-y-2">
+             <li>
+               <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+                 • Electronics
+               </a>
+             </li>
+             <li>
+               <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+                 • Cleaning
+               </a>
+             </li>
+             <li>
+               <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+                 • Home Move
+               </a>
+             </li>
+             <li>
+               <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+                 • Salon & Spa
+               </a>
+             </li>
+             <li>
+               <a href="#" class="text-gray-600 hover:text-[#FD7600]">
+                 • Digital Marketing
+               </a>
+             </li>
+           </ul>
+         </div>
+
+         <!-- Contact Info -->
+         <div>
+           <h3 class="font-bold text-lg mb-4">Contact Info</h3>
+           <ul class="space-y-2">
+             <li class="text-gray-600">• 41/1 Hilton Mall, NY City</li>
+             <li class="text-gray-600">• +012-78901234</li>
+             <li class="text-gray-600">• example@mail.com</li>
+           </ul>
+           <div class="flex space-x-4 mt-4">
+             <a href="#" class="text-[#3b5998] hover:text-[#FD7600]">
+               <i class="fab fa-facebook-f"></i>
+             </a>
+             <a href="#" class="text-[#55acee] hover:text-[#FD7600]">
+               <i class="fab fa-twitter"></i>
+             </a>
+             <a href="#" class="text-[#007ab9] hover:text-[#FD7600]">
+               <i class="fab fa-linkedin-in"></i>
+             </a>
+           </div>
+         </div>
+       </div>
+
+       <!-- Copyright -->
+       <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-gray-300 text-center text-gray-600">
+         All copyright © 2025 Reserved
+       </div>
+     </footer>
+
+
     </div>
 
     <script>
