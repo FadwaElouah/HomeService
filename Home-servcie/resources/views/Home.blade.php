@@ -445,6 +445,91 @@
             </p>
         </div>
     </section>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join As A Service Provider</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex  my-[3rem]">
+
+
+        <!-- Main content -->
+        <div class="flex-1 bg-[#e6f2ff] relative overflow-hidden">
+            <div class="container mx-auto px-4 py-16">
+                <div class="max-w-lg">
+                    <h2 class="text-2xl font-medium text-gray-700 mb-4">
+                        Join with us as a service provider and earn a good remuneration
+                    </h2>
+
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-600">Get regular works</span>
+                        </div>
+
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-600">24/7 Support</span>
+                        </div>
+
+                        <div class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-gray-600">Generous service buyers</span>
+                        </div>
+                    </div>
+
+                    <button class="bg-[#ff7a22] hover:bg-[#e86d1a] text-white font-medium py-3 px-6 rounded-md transition-colors">
+                        Join As A Seller
+                    </button>
+                </div>
+            </div>
+
+            <!-- Profile images -->
+            <div class="absolute top-12 right-[7rem]">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Service provider" class="w-16 h-16 rounded-full border-2 border-white object-cover">
+            </div>
+
+            <div class="absolute top-28 right-[20rem]">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Service provider" class="w-24 h-24 rounded-full border-2 border-white object-cover">
+            </div>
+
+            <div class="absolute top-64 right-[30rem]">
+                <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Service provider" class="w-16 h-16 rounded-full border-2 border-white object-cover">
+            </div>
+
+            <div class="absolute top-16 right-[30rem]">
+                <img src="https://randomuser.me/api/portraits/women/29.jpg" alt="Service provider" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+            </div>
+
+            <div class="absolute top-[19rem] right-[19rem]">
+                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Service provider" class="w-12 h-12 rounded-full border-2 border-white object-cover">
+            </div>
+
+            <div class="absolute top-[15rem] right-[10rem]">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Service provider" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
     <!-- Footer -->
   <footer class="bg-gray py-12">
     <div class="container mx-auto px-4">
