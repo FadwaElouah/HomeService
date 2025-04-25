@@ -436,8 +436,17 @@
             </div>
         </div>
     </section>
+
+    <section class="bg-[#f9f5f1] py-16">
+        <div class="container mx-auto px-4 max-w-2xl text-center">
+            <h2 class="text-3xl font-bold mb-4">Best Taskers of the Month</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Qixer is a best service-based marketplace out there to help you get any task done conveniently. Thanks to our well built mobile app and website for making it even convenient for the users.
+            </p>
+        </div>
+    </section>
     <!-- Footer -->
-  <footer class="bg-lightgray py-12">
+  <footer class="bg-gray py-12">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
