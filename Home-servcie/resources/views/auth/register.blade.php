@@ -150,18 +150,20 @@
           @enderror
         </div>
 
-        <div>
-          <label for="address" class="block mb-2 font-medium">
-            Address
+          <div>
+          <label for="user_role" class="block mb-2 font-medium">
+            Role <span class="text-red-500">*</span>
           </label>
-          <input
-            id="address"
-            name="address"
-            placeholder="Your address"
-            value="{{ old('address') }}"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FD7600] focus:border-transparent @error('address') border-red-500 @enderror"
-          />
-          @error('address')
+          <select
+            id="user_role"
+            name="user_role"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FD7600] focus:border-transparent @error('user_role') border-red-500 @enderror"
+          >
+            <option value="">Select Role</option>
+            <option value="admin" {{ old('user_role') == 'admin' ? 'selected' : '' }}>Admin</option>
+            <option value="provider" {{ old('user_role') == 'provider' ? 'selected' : '' }}>Provider</option>
+          </select>
+          @error('user_role')
             <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
           @enderror
         </div>
