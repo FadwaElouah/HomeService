@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\PageController;
-
+use App\Http\Controllers\ServiceProviderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,4 +47,11 @@ Route::middleware(['auth'])->group(function () {
             'companyName' => 'Your Company'
         ]);
     })->name('dashboard');
+});// Routes pour les prestataires
+Route::middleware(['auth'])->group(function () {
+    Route::get('/services/create', [ServiceProviderController::class, 'create'])->name('services.create');
+    Route::post('/services', [ServiceProviderController::class, 'store'])->name('services.store');
+    Route::get('/provider/dashboard', [ServiceProviderController::class, 'dashboard'])->name('provider.dashboard');
 });
+
+
