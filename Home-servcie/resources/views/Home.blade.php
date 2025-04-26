@@ -407,22 +407,7 @@
             </p>
         </div>
     </section>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join As A Service Provider</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
-</head>
-<body>
+
     <div class="flex  my-[3rem]">
 
 
@@ -490,8 +475,8 @@
         </div>
 
     </div>
-</body>
-</html>
+{{-- </body> --}}
+{{-- </html> --}}
      <!-- Footer -->
   <footer class="bg-[#d9d9d9] py-10 px-4">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
