@@ -20,10 +20,10 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed|min:6',
-            'role' => 'required|in:client,provider',
+            'role' => 'required|in:Admin,Provider',
             'phone' => 'required|string',
             'phone_code' => 'required|string',
-            'address' => 'nullable|string|max:255',
+
         ]);
 
         // Concatenate phone code and phone number
@@ -33,9 +33,9 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role,
+            'role' => strtolower($request->role),
             'phone' => $fullPhone,
-            'address' => $request->address,
+
         ]);
 
         return redirect('/login')->with('success', "Inscription réussie !");

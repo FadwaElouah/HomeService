@@ -63,32 +63,12 @@
         </div>
       @endif
 
-      <!-- User Type Selection -->
-      <div class="flex justify-center gap-4 mb-16">
-        <button
-          type="button"
-          id="provider-btn"
-          class="w-40 border border-[#FD7600] text-[#FD7600] hover:bg-[#FD7600] hover:text-white py-2 px-4 rounded flex items-center justify-center role-btn"
-          data-role="provider"
-        >
-          <i class="fas fa-briefcase mr-2"></i>
-          Seller
-        </button>
-        <button
-          type="button"
-          id="client-btn"
-          class="w-40 bg-[#FD7600] hover:bg-[#e66a00] text-white py-2 px-4 rounded flex items-center justify-center role-btn active"
-          data-role="client"
-        >
-          <i class="fas fa-user mr-2"></i>
-          Buyer
-        </button>
-      </div>
+
 
       <!-- Registration Form -->
       <form class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6" method="POST" action="{{ route('register') }}">
         @csrf
-        <input type="hidden" name="role" id="role-input" value="client">
+
 
         <div>
           <label for="name" class="block mb-2 font-medium">
@@ -151,19 +131,19 @@
         </div>
 
           <div>
-          <label for="user_role" class="block mb-2 font-medium">
+          <label for="role" class="block mb-2 font-medium">
             Role <span class="text-red-500">*</span>
           </label>
           <select
-            id="user_role"
-            name="user_role"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FD7600] focus:border-transparent @error('user_role') border-red-500 @enderror"
+            id="role"
+            name="role"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FD7600] focus:border-transparent @error('role') border-red-500 @enderror"
           >
             <option value="">Select Role</option>
-            <option value="admin" {{ old('user_role') == 'admin' ? 'selected' : '' }}>Admin</option>
-            <option value="provider" {{ old('user_role') == 'provider' ? 'selected' : '' }}>Provider</option>
+            <option value="Admin" {{ old('role') == 'Admin' ? 'selected' : '' }}>Admin</option>
+            <option value="Provider" {{ old('role') == 'Provider' ? 'selected' : '' }}>Provider</option>
           </select>
-          @error('user_role')
+          @error('role')
             <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
           @enderror
         </div>

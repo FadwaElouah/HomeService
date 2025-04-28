@@ -31,7 +31,7 @@ class ServiceProviderController extends Controller
         // Traitement de l'image
         $imagePath = $request->file('file-upload')->store('services', 'public');
 
-      
+        // Création du service
         $service = auth()->user()->services()->create([
             'title' => $validated['title'],
             'price' => $validated['price'],
