@@ -9,9 +9,14 @@ use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+
     public function login(Request $request)
     {
-        // Validation
+    
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string',
@@ -24,17 +29,23 @@ class LoginController extends Controller
         // Tentative d'authentification
         $credentials = $request->only('email', 'password');
 
-        if (!$token = Auth::attempt($credentials)) {
-            return response()->json(['message' => 'Unauthorized'], 401);
+        if (Auth::attempt($credentials)) {
+            // Vérification du rôle et redirection
+            if (auth()->user()->role === 'provider') {
+                return redirect()->route('provider.dashboard');
+            }
+
+            if (auth()->user()->role === 'admin') {
+                return redirect()->route('admin.services.pending');
+            }
+
+            if (auth()->user()->role === 'client') {
+                return redirect()->route('home');
+            }
         }
 
-        return response()->json([
-            'status' => 'success',
-            'user' => Auth::user(),
-            'authorization' => [
-                'token' => $token,
-                'type' => 'bearer',
-            ],
+        return back()->withErrors([
+            'email' => 'Email ou mot de passe invalide',
         ]);
     }
 
@@ -47,10 +58,4 @@ class LoginController extends Controller
             'message' => 'Successfully logged out',
         ]);
     }
-
-    public function showLoginForm()
-{
-    return view('auth.login'); 
-}
-
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ServiceProviderController extends Controller
@@ -30,9 +31,10 @@ class ServiceProviderController extends Controller
 
         // Traitement de l'image
         $imagePath = $request->file('file-upload')->store('services', 'public');
+        $user = User::find(auth()->id());
 
         // Création du service
-        $service = auth()->user()->services()->create([
+        $service = $user->services()->create([
             'title' => $validated['title'],
             'price' => $validated['price'],
             'phone' => $validated['phone'],
@@ -47,7 +49,8 @@ class ServiceProviderController extends Controller
 
     public function dashboard()
     {
-        $services = auth()->user()->services()->latest()->get();
-        return view('services.dashboard', compact('services'));
+        $user = User::find(auth()->id());
+        $services = $user->services()->latest()->get();
+        return view('public', compact('services'));
     }
 }

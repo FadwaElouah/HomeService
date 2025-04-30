@@ -124,7 +124,8 @@
   <main class="flex-grow flex items-center justify-center py-16">
     <div class="w-full max-w-md px-4">
       <h1 class="text-3xl font-bold text-center mb-8">Sign In</h1>
-      <form>
+      <form action="/login" method="POST">
+        @csrf
         <div class="space-y-6">
           <div class="space-y-2">
             <label for="email" class="block text-sm font-medium">
@@ -132,7 +133,8 @@
             </label>
             <input
               id="email"
-              type="text"
+              type="email"
+              name="email"
               placeholder="Username Or Email"
               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
             />
@@ -144,6 +146,7 @@
             <input
               id="password"
               type="password"
+              name="password"
               placeholder="Password"
               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent"
             />
@@ -159,7 +162,7 @@
                 for="remember"
                 class="text-sm font-medium leading-none"
               >
-                Remembre me
+                Remember me
               </label>
             </div>
             <a href="#" class="text-sm text-gray-600">
@@ -167,7 +170,7 @@
             </a>
           </div>
           <button type="submit" class="w-full bg-orange text-white py-3 rounded-md font-medium">
-            login Now
+            Login Now
           </button>
         </div>
       </form>

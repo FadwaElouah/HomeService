@@ -317,6 +317,11 @@
             form.reset();
             previewContainer.classList.add('hidden');
         });
+
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    window.location.href = 'public.html'; 
+});
     </script>
 </body>
 </html>

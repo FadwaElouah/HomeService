@@ -17,9 +17,7 @@ use App\Http\Controllers\AdminServiceController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 use App\Http\Controllers\Auth\RegisterController;
 
@@ -56,8 +54,12 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
+
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/services/pending', [AdminServiceController::class, 'pending'])->name('admin.services.pending');
     Route::post('/services/{service}/approve', [AdminServiceController::class, 'approve'])->name('admin.services.approve');
     Route::post('/services/{service}/reject', [AdminServiceController::class, 'reject'])->name('admin.services.reject');
 });
+
+
+
