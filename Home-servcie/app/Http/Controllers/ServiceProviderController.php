@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 class ServiceProviderController extends Controller
 {
     public function __construct()
-    {
-        $this->middleware('auth');
-    }
+{
+    $this->middleware('auth');
+    $this->middleware('verified');
+    $this->middleware('can:create,App\Models\Service'); 
+}
 
     // Afficher la page de soumission de service
     public function create()

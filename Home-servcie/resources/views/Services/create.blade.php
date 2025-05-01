@@ -46,7 +46,7 @@
                                 <div class="flex text-sm text-gray-600">
                                     <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-primary hover:text-primary-dark">
                                         <span>Upload an image</span>
-                                        <input id="file-upload" name="file-upload" type="file" class="sr-only" accept="image/*" required>
+                                        <input id="image" name="image" type="file" class="sr-only" accept="image/*" required>
                                     </label>
                                     <p class="pl-1">or drag and drop</p>
                                 </div>
@@ -77,7 +77,9 @@
                             Price (DH)
                         </label>
                         <div class="mt-1 relative rounded-md shadow-sm">
-                            <input type="number" name="price" id="price" value="{{ old('price') }}" class="focus:ring-primary focus:border-primary block w-full pr-12 sm:text-sm border-gray-300 rounded-md p-2 border" placeholder="0.00" required>
+                            <input type="number" name="price" id="price" value="{{ old('price') }}" min="0" step="0.01"  class="focus:ring-primary focus:border-primary block w-full pr-12 sm:text-sm border-gray-300 rounded-md p-2 border" placeholder="0.00" required>
+
+
                             <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                 <span class="text-gray-500 sm:text-sm">DH</span>
                             </div>
@@ -92,7 +94,8 @@
                         <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
                             Phone Number
                         </label>
-                        <input type="tel" name="phone" id="phone" value="{{ old('phone') }}" class="shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md p-2 border" placeholder="e.g. 0612345678" required>
+                        <input type="tel" name="phone" id="phone" value="{{ old('phone') }}" pattern="0[5-7][0-9]{8}" title="Le numéro de téléphone doit commencer par 05, 06 ou 07 et contenir 10 chiffres"
+                        class="shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md p-2 border"     placeholder="Exemple : 0612345678" required>
                         @error('phone')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                         @enderror
@@ -110,10 +113,15 @@
                     </div>
 
                     <!-- Submit Button -->
-                    <div class="flex justify-end">
-                        <button type="submit" class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
-                            Submit for Review
-                        </button>
+                    <button type="submit" id="submit-btn" class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
+                        <span id="submit-text">Submit for Review</span>
+                        <span id="submit-spinner" class="hidden ml-2">
+                            <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </span>
+                    </button>
                     </div>
                 </form>
             </div>
@@ -123,8 +131,8 @@
 
 @push('scripts')
 <script>
-    // JavaScript pour la prévisualisation de l'image
-    document.getElementById('file-upload').addEventListener('change', function(e) {
+
+    document.getElementById('image').addEventListener('change', function(e) {
         const file = e.target.files[0];
         if (file) {
             const reader = new FileReader();
@@ -135,6 +143,19 @@
             reader.readAsDataURL(file);
         }
     });
+
+    document.getElementById('phone').addEventListener('input', function(e) {
+    this.value = this.value.replace(/[^0-9]/g, '').substring(0, 10);
+    if (!this.value.startsWith('0')) {
+        this.value = '';
+    }
+});
+
+document.getElementById('publication-form').addEventListener('submit', function() {
+    document.getElementById('submit-text').classList.add('hidden');
+    document.getElementById('submit-spinner').classList.remove('hidden');
+    document.getElementById('submit-btn').disabled = true;
+});
 </script>
 @endpush
 @endsection

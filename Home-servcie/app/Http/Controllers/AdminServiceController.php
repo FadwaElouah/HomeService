@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Service;
 
 class AdminServiceController extends Controller
 {
@@ -24,7 +25,7 @@ class AdminServiceController extends Controller
         $service->update(['status' => 'approved']);
 
         // Notifier le prestataire
-        $service->user->notify(new ServiceStatusChanged($service));
+        // $service->user->notify(new ServiceStatusChanged($service)); 
 
         return back()->with('success', 'Service approuvé avec succès');
     }
@@ -42,7 +43,7 @@ class AdminServiceController extends Controller
         ]);
 
         // Notifier le prestataire
-        $service->user->notify(new ServiceStatusChanged($service));
+        // $service->user->notify(new ServiceStatusChanged($service));
 
         return back()->with('success', 'Service rejeté avec succès');
     }
