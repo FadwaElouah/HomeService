@@ -8,15 +8,20 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CheckRole
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
     public function handle(Request $request, Closure $next, $role)
     {
-        if (!auth()->check() || auth()->user()->role !== $role) {
-            return response()->json(['error' => 'Unauthorized'], 403);
+        // 1. Vérification de l'authentification
+        if (!auth()->check()) {
+            return $request->expectsJson()
+                ? response()->json(['message' => 'Non authentifié'], 401)
+                : redirect()->route('login');
+        }
+
+        // 2. Vérification du rôle
+        if (auth()->user()->role !== $role) {
+            return $request->expectsJson()
+                ? response()->json(['message' => 'Accès refusé'], 403)
+                : redirect()->route('home')->with('error', 'Vous n\'avez pas l\'autorisation d\'accéder à cette page');
         }
 
         return $next($request);
