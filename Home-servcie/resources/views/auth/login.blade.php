@@ -126,6 +126,7 @@
       <h1 class="text-3xl font-bold text-center mb-8">Sign In</h1>
       <form action="/login" method="POST">
         @csrf
+
         <div class="space-y-6">
           <div class="space-y-2">
             <label for="email" class="block text-sm font-medium">

@@ -11,7 +11,7 @@ class ServiceProviderController extends Controller
 {
     $this->middleware('auth');
     $this->middleware('verified');
-    $this->middleware('can:create,App\Models\Service'); 
+    $this->middleware('can:create,App\Models\Service');
 }
 
     // Afficher la page de soumission de service

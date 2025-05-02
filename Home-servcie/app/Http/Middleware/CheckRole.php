@@ -8,22 +8,29 @@ use Symfony\Component\HttpFoundation\Response;
 
 class CheckRole
 {
-    public function handle(Request $request, Closure $next, $role)
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     */
+    public function handle($request, Closure $next, $role)
     {
-        // 1. Vérification de l'authentification
+        // ✅ Vérifie si l'utilisateur est connecté (authentifié)
         if (!auth()->check()) {
-            return $request->expectsJson()
-                ? response()->json(['message' => 'Non authentifié'], 401)
-                : redirect()->route('login');
+            return redirect()->route('login'); // Rediriger vers la page de connexion s'il n'est pas connecté
         }
 
-        // 2. Vérification du rôle
-        if (auth()->user()->role !== $role) {
-            return $request->expectsJson()
-                ? response()->json(['message' => 'Accès refusé'], 403)
-                : redirect()->route('home')->with('error', 'Vous n\'avez pas l\'autorisation d\'accéder à cette page');
+        $user = auth()->user();
+
+
+        if ($user->role !== $role || $user->is_active !== true) {
+
+            abort(403, 'Accès non autorisé. Veuillez contacter l’administration.');
         }
 
+        
         return $next($request);
     }
+
 }
+

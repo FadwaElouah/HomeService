@@ -24,6 +24,7 @@ class User extends Authenticatable
         'phone',
         'address',
         'profile_image',
+        'is_active',
     ];
 
 
@@ -46,6 +47,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+    ];
+
+   
+
+    protected $attributes = [
+        'is_active' => true
     ];
 
     public function services()
